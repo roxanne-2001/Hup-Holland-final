@@ -26,6 +26,35 @@ export default function RecommendationsPage() {
   const [recommendations, setRecommendations] = useState<Recommendation[]>([])
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [savingId, setSavingId] = useState<number | null>(null)
+
+  async function saveOpportunity(rec: Recommendation, index: number) {
+    setSavingId(index)
+    try {
+      const response = await fetch('/api/saved-opportunities', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          funding_name: rec.name,
+          funding_type: rec.fundingType,
+          funding_amount: `€${rec.fundingAmount.toLocaleString()}`,
+          match_score: rec.matchScore,
+          description: `AI recommended match based on your startup profile`,
+        }),
+      })
+
+      if (response.ok) {
+        alert('✓ Opgeslagen! Bekijk je opgeslagen opportunities in je dashboard.')
+      } else {
+        alert('Je moet ingelogd zijn om opportunities op te slaan.')
+      }
+    } catch (error) {
+      console.error('Error saving opportunity:', error)
+      alert('Er ging iets mis. Probeer het opnieuw.')
+    } finally {
+      setSavingId(null)
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -336,9 +365,18 @@ export default function RecommendationsPage() {
                         </svg>
                         <span className="font-semibold text-lg">€{rec.fundingAmount.toLocaleString()}</span>
                       </div>
-                      <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform">
-                        Bekijk details →
-                      </button>
+                      <div className="flex gap-3">
+                        <button 
+                          onClick={() => saveOpportunity(rec, idx)}
+                          disabled={savingId === idx}
+                          className="flex-1 bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-xl font-semibold hover:bg-indigo-50 transition disabled:opacity-50"
+                        >
+                          {savingId === idx ? 'Opslaan...' : 'Opslaan'}
+                        </button>
+                        <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform">
+                          Bekijk details →
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
