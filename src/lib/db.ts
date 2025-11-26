@@ -41,6 +41,49 @@ export function initDatabase() {
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     );
+
+    CREATE TABLE IF NOT EXISTS saved_opportunities (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      funding_name TEXT NOT NULL,
+      funding_type TEXT NOT NULL,
+      funding_amount TEXT,
+      description TEXT,
+      match_score REAL,
+      saved_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS chat_messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      message TEXT NOT NULL,
+      response TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS applications (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      funding_name TEXT NOT NULL,
+      funding_type TEXT NOT NULL,
+      status TEXT DEFAULT 'pending',
+      applied_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS funding_opportunities (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      startup_name TEXT NOT NULL,
+      fund_name TEXT NOT NULL,
+      country TEXT DEFAULT 'Netherlands',
+      stage TEXT NOT NULL,
+      sector TEXT NOT NULL,
+      amount_eur REAL NOT NULL,
+      year INTEGER NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
   `)
 
   return db

@@ -32,21 +32,6 @@ console.log(`Nederlandse startups: ${nlData.length}`);
 const dbPath = path.join(__dirname, '..', 'hup_holland.db');
 const db = new Database(dbPath);
 
-// Maak funding_opportunities tabel aan
-db.exec(`
-  CREATE TABLE IF NOT EXISTS funding_opportunities (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    startup_name TEXT NOT NULL,
-    fund_name TEXT NOT NULL,
-    country TEXT DEFAULT 'Netherlands',
-    stage TEXT NOT NULL,
-    sector TEXT NOT NULL,
-    amount_eur REAL NOT NULL,
-    year INTEGER NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  );
-`);
-
 // Check hoeveel records er al zijn
 const count = db.prepare('SELECT COUNT(*) as count FROM funding_opportunities').get();
 console.log(`Huidige records in database: ${count.count}`);
