@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { getDatabase } from '@/lib/db'
 
 interface FundingOpportunity {
   id: number
@@ -7,38 +8,64 @@ interface FundingOpportunity {
   amount: string
   stage: string
   description: string
+  sector?: string
+  year?: number
 }
 
-const opportunities: FundingOpportunity[] = [
-  {
-    id: 1,
-    name: 'Tech Venture Fund',
-    type: 'Venture Capital',
-    amount: '€50,000 - €500,000',
-    stage: 'Seed to Series A',
-    description: 'Investing in innovative tech startups',
-  },
-  {
-    id: 2,
-    name: 'Green Innovation Grant',
-    type: 'Grant',
-    amount: '€10,000 - €100,000',
-    stage: 'Early Stage',
-    description: 'Support for sustainable business ideas',
-  },
-  {
-    id: 3,
-    name: 'Scale-up Accelerator',
-    type: 'Accelerator',
-    amount: '€20,000 + 2% equity',
-    stage: 'Growth',
-    description: 'Intensive 3-month program for scaling companies',
-  },
-]
+export async function GET(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const type = searchParams.get('type')
+    const sector = searchParams.get('sector')
+    const stage = searchParams.get('stage')
 
-export async function GET() {
-  return NextResponse.json({
-    success: true,
-    data: opportunities,
-  })
+    const db = getDatabase()
+    if (!db) {
+      return NextResponse.json({ error: 'Database error' }, { status: 500 })
+    }
+
+    // Bouw query met filters
+    let query = 'SELECT * FROM funding_opportunities WHERE 1=1'
+    const params: any[] = []
+
+    if (type && type !== 'all') {
+      query += ' AND stage = ?'
+      params.push(type)
+    }
+
+    if (sector && sector !== 'all') {
+      query += ' AND sector = ?'
+      params.push(sector)
+    }
+
+    if (stage && stage !== 'all') {
+      query += ' AND stage = ?'
+      params.push(stage)
+    }
+
+    query += ' ORDER BY amount_eur DESC LIMIT 500'
+
+    const opportunities = db.prepare(query).all(...params)
+
+    // Format data voor frontend
+    const formatted = opportunities.map((opp: any) => ({
+      id: opp.id,
+      name: `${opp.startup_name} → ${opp.fund_name}`,
+      type: opp.stage,
+      amount: `€${Math.round(opp.amount_eur).toLocaleString()}`,
+      stage: opp.stage,
+      description: `${opp.sector} startup uit ${opp.year}`,
+      sector: opp.sector,
+      year: opp.year,
+    }))
+
+    return NextResponse.json({
+      success: true,
+      data: formatted,
+      total: formatted.length,
+    })
+  } catch (error) {
+    console.error('Error fetching funding opportunities:', error)
+    return NextResponse.json({ error: 'Server error' }, { status: 500 })
+  }
 }
