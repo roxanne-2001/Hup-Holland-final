@@ -83,30 +83,16 @@ export default function Home() {
                     Start vergelijken →
                   </button>
                 </Link>
-                <Link href="#demo">
-                  <button className="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:border-gray-300 hover:bg-gray-50 transition text-lg">
-                    Bekijk demo
-                  </button>
-                </Link>
               </div>
 
               <div className="flex items-center gap-8 text-sm">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
+                <div>
                   <span className="text-gray-600 font-medium">Gratis vergelijken</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <span className="text-gray-600 font-medium">500+ opties</span>
+                <div>
+                  <span className="text-gray-600 font-medium">100+ opties</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
+                <div>
                   <span className="text-gray-600 font-medium">AI matching</span>
                 </div>
               </div>
@@ -272,7 +258,7 @@ export default function Home() {
               <div className="mt-6">
                 <div className="text-4xl mb-4">🤖</div>
                 <h3 className="font-bold text-gray-900 text-xl mb-3">AI matching</h3>
-                <p className="text-gray-600">Onze AI analyseert 500+ funding opties en berekent je match score</p>
+                <p className="text-gray-600">Onze AI analyseert 100+ funding opties en berekent je match score</p>
               </div>
             </div>
             
@@ -345,12 +331,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/recommendations">
                     <button className="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition transform shadow-lg">
-                      Start nu gratis →
-                    </button>
-                  </Link>
-                  <Link href="#demo">
-                    <button className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition backdrop-blur">
-                      Plan een demo
+                      Start vergelijken →
                     </button>
                   </Link>
                 </div>
@@ -364,7 +345,7 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white">500+</div>
+                      <div className="text-3xl font-bold text-white">100+</div>
                       <div className="text-sm text-indigo-200">Funding opties</div>
                     </div>
                     <div className="text-center">

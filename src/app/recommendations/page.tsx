@@ -308,7 +308,7 @@ export default function RecommendationsPage() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">AI aan het werk...</h3>
-                <p className="text-gray-600">We analyseren 500+ funding opties voor jou</p>
+                <p className="text-gray-600">We analyseren 100+ funding opties voor jou</p>
               </div>
             )}
 
@@ -326,46 +326,59 @@ export default function RecommendationsPage() {
 
             {recommendations.length > 0 && (
               <div>
-                <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                <div className="mb-8 text-center">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <span className="w-2 h-2 bg-indigo-600 rounded-full animate-pulse"></span>
                     {recommendations.length} perfecte matches
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                    Jouw persoonlijke aanbevelingen
                   </h2>
                   <p className="text-gray-600">Gesorteerd op match score - de beste bovenaan</p>
                 </div>
                 <div className="space-y-6">
                   {recommendations.map((rec, idx) => (
-                    <div key={idx} className="group bg-white rounded-2xl border-2 border-gray-200 hover:border-indigo-300 p-6 hover:shadow-xl transition-all">
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{rec.name}</h3>
-                          <span className="inline-block bg-indigo-100 text-indigo-700 text-sm font-bold px-3 py-1 rounded-full">
-                            {rec.fundingType}
-                          </span>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                            {rec.matchScore}%
+                    <div key={idx} className="group relative bg-gradient-to-br from-white via-indigo-50/20 to-purple-50/20 rounded-2xl border-2 border-gray-200 hover:border-indigo-300 p-8 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                      {/* Subtle gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                      
+                      <div className="relative">
+                        <div className="flex justify-between items-start mb-6">
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">{rec.name}</h3>
+                            <span className="inline-block bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 text-sm font-bold px-4 py-2 rounded-full shadow-sm">
+                              {rec.fundingType}
+                            </span>
                           </div>
-                          <p className="text-sm text-gray-600 mt-1">Match score</p>
+                          <div className="text-right bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-lg border-2 border-indigo-100">
+                            <div className="text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                              {rec.matchScore}%
+                            </div>
+                            <p className="text-sm text-gray-600 mt-2 font-medium">Match score</p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-600 mb-6">
-                        <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="font-semibold text-lg">€{rec.fundingAmount.toLocaleString()}</span>
-                      </div>
-                      <div className="flex gap-3">
-                        <button 
-                          onClick={() => saveOpportunity(rec, idx)}
-                          disabled={savingId === idx}
-                          className="flex-1 bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-xl font-semibold hover:bg-indigo-50 transition disabled:opacity-50"
-                        >
-                          {savingId === idx ? 'Opslaan...' : 'Opslaan'}
-                        </button>
-                        <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform">
-                          Bekijk details →
-                        </button>
+                        
+                        <div className="flex items-center gap-3 text-gray-700 mb-6 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                          <div className="w-10 h-10 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center shadow-sm">
+                            <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <span className="font-bold text-xl bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">€{rec.fundingAmount.toLocaleString()}</span>
+                        </div>
+                        
+                        <div className="flex gap-3">
+                          <button 
+                            onClick={() => saveOpportunity(rec, idx)}
+                            disabled={savingId === idx}
+                            className="flex-1 bg-white border-2 border-indigo-600 text-indigo-600 px-6 py-3 rounded-xl font-semibold hover:bg-indigo-50 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            {savingId === idx ? 'Opslaan...' : 'Opslaan'}
+                          </button>
+                          <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 transform">
+                            Bekijk details →
+                          </button>
+                        </div>
                       </div>
                     </div>
                   ))}

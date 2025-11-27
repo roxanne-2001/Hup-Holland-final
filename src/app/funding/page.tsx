@@ -58,7 +58,7 @@ export default function FundingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Ontdek <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">500+</span> funding opties
+              Ontdek <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">100+</span> funding opties
             </h1>
             <p className="text-xl text-gray-600">
               Van subsidies tot venture capital - vind de perfecte financiering voor jouw startup
