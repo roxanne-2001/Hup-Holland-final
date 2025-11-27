@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-12">
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Hup Holland
+              Hub Holland
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/funding" className="text-gray-600 hover:text-gray-900 font-medium transition">

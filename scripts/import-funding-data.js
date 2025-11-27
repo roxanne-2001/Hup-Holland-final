@@ -56,11 +56,21 @@ for (let i = 1; i < lines.length; i++) {
   // Headers: Bedrijfsnaam,ID,Type organisatie,Hoofdcategorie funding,Subcategorie,Fase doelgroep,Sector focus,Land,Website,Opmerkingen,Adres
   const bedrijfsnaam = values[0] || 'Unknown'
   const typeOrganisatie = values[2] || 'Platform' // Type organisatie
-  const hoofdcategorie = values[3] || 'Unknown' // Hoofdcategorie funding
-  const subcategorie = values[4] || '' // Subcategorie
+  let hoofdcategorie = values[3] || 'Unknown' // Hoofdcategorie funding
+  let subcategorie = values[4] || '' // Subcategorie
   const faseBedrijf = values[5] || 'Startups' // Fase doelgroep
   const sectorFocus = values[6] || 'Algemeen' // Sector focus
   const website = values[8] || ''
+
+  // Vertaal "Lending" naar "Lening" in subcategorie
+  if (subcategorie.includes('Lending')) {
+    subcategorie = subcategorie.replace(/Lending/g, 'Lening')
+  }
+  
+  // Vertaal "Lending" naar "Lening" in hoofdcategorie indien nodig
+  if (hoofdcategorie.includes('Lending')) {
+    hoofdcategorie = hoofdcategorie.replace(/Lending/g, 'Lening')
+  }
 
   // Skip if no company name
   if (!bedrijfsnaam || bedrijfsnaam === 'Bedrijfsnaam') {

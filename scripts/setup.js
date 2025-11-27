@@ -2,7 +2,7 @@ const { initDatabase } = require('../src/lib/db.ts')
 const fs = require('fs')
 const path = require('path')
 
-console.log('🚀 Setting up Hup Holland database...\n')
+console.log('🚀 Setting up Hub Holland database...\n')
 
 // Check if database already exists
 const dbPath = path.join(process.cwd(), 'hup_holland.db')

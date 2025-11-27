@@ -1,4 +1,4 @@
-# Hup Holland - Startup Funding Platform
+# Hub Holland - Startup Funding Platform
 
 Een funding platform waar Nederlandse startups informatie kunnen krijgen over funding mogelijkheden, met een intelligente AI-powered recommender systeem gebaseerd op 2400+ echte Nederlandse startup deals.
 

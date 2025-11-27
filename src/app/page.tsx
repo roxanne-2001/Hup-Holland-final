@@ -18,31 +18,31 @@ export default function Home() {
       title: 'Angel Investors',
       description: 'Particuliere investeerders die in vroege fase startups investeren',
       amount: '€25K - €500K',
-      link: '/funding?type=angel'
+      link: '/angel-investors'
     },
     {
       title: 'Subsidies & Grants',
       description: 'Overheidssteun en EU-subsidies die je niet hoeft terug te betalen',
       amount: '€10K - €2M',
-      link: '/funding?type=grant'
+      link: '/subsidies-grants'
     },
     {
       title: 'Accelerators',
       description: 'Programmas met begeleiding, netwerk en initiële financiering',
       amount: '€15K - €150K',
-      link: '/funding?type=accelerator'
+      link: '/accelerators'
     },
     {
       title: 'Bankleningen',
       description: 'Traditionele zakelijke leningen met vaste rente en aflossing',
       amount: '€50K - €5M',
-      link: '/funding?type=loan'
+      link: '/bankleningen'
     },
     {
       title: 'Crowdfunding',
       description: 'Kapitaal ophalen van vele kleine investeerders via online platforms',
       amount: '€5K - €1M',
-      link: '/funding?type=crowdfunding'
+      link: '/crowdfunding'
     }
   ]
 
@@ -199,6 +199,16 @@ export default function Home() {
       {/* Popular Funding */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
+          {/* Direct to Funding Button */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16 py-8">
+            <p className="text-xl text-gray-700 font-medium">Enkel nog op zoek naar een passed bedrijf?</p>
+            <Link href="/funding">
+              <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition transform">
+                Bekijk alle funding →
+              </button>
+            </Link>
+          </div>
+
           <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Populaire Funding Opties</h2>
           <p className="text-gray-600 mb-12 text-center text-lg">De meest gekozen financieringen door Nederlandse startups</p>
           
@@ -382,7 +392,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-bold text-xl mb-4">Hup Holland Funding</h3>
+              <h3 className="font-bold text-xl mb-4">Hub Holland Funding</h3>
               <p className="text-gray-400 text-sm">
                 Het grootste vergelijkingsplatform voor startup funding in Nederland.
               </p>
@@ -401,7 +411,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Over Ons</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="#" className="hover:text-white">Over Hup Holland</Link></li>
+                <li><Link href="#" className="hover:text-white">Over Hub Holland</Link></li>
                 <li><Link href="#" className="hover:text-white">Contact</Link></li>
                 <li><Link href="#" className="hover:text-white">Privacy</Link></li>
                 <li><Link href="#" className="hover:text-white">Voorwaarden</Link></li>
@@ -419,7 +429,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            <p>© 2025 Hup Holland Funding. Alle rechten voorbehouden.</p>
+            <p>© 2025 Hub Holland Funding. Alle rechten voorbehouden.</p>
           </div>
         </div>
       </footer>

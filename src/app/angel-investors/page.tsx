@@ -3,12 +3,12 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 
-export default function VentureCapitalPage() {
+export default function AngelInvestorsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Hero Section - Clean and minimal */}
+      {/* Hero Section */}
       <section className="relative pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-4">
@@ -17,50 +17,70 @@ export default function VentureCapitalPage() {
             </Link>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Venture Capital
+            Angel Investors
           </h1>
           <p className="text-2xl text-gray-600 leading-relaxed">
-            Investeer in ruil voor aandelen en groei samen met je investeerders
+            Particuliere investeerders die in vroege fase startups investeren
           </p>
         </div>
       </section>
 
-      {/* Main Content - Article style */}
+      {/* Main Content */}
       <article className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Introduction */}
           <div className="mb-16 max-w-4xl">
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              Venture Capital fonds is een manier van investeren in jonge bedrijven die veel groeipotentie hebben. Bij Venture Capital, ook wel VC genoemd, investeren investeerders (VC-fondsen) geld in ruil voor een deel van het bedrijf, meestal in de vorm van aandelen.
+              Als je een start-up of scale-up runt is het verkrijgen van de juiste financiering cruciaal voor groei. <strong>Angel investors</strong> zijn één van de populaire opties voor ondernemers die kapitaal willen ophalen in ruil voor eigendomsaandelen (equity). Deze gids legt uit wat het is, hoe het werkt, de voordelen en nadelen, en welke bedrijven hier baat bij hebben.
             </p>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Dit betekent dat je als ondernemer niet zoals bij een lening het geld terug hoeft te betalen, maar wel een stukje van je bedrijf moet delen. VC helpt bedrijven sneller te groeien, nieuwe markten te betreden en het product of de dienst sneller te ontwikkelen.
+            
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 mt-8">Wat is een Angel Investor?</h3>
+            <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              Een <strong>Angel investor</strong> is een particuliere investeerder die zijn eigen geld investeert in een start-up of scale-up in een vroeg stadium. Ze investeren vaak in ruil voor <strong>equity</strong> oftewel een deel van het eigendom van het bedrijf.
             </p>
+            
+            <div className="bg-indigo-50 border-l-4 border-indigo-600 p-6 mb-6">
+              <p className="font-semibold text-gray-900 mb-3">Kenmerken van angel investors:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-indigo-600 mr-2">•</span>
+                  <span>Vaak succesvolle ondernemers of senior professionals.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-indigo-600 mr-2">•</span>
+                  <span>Investeringen variëren meestal tussen €25.000 en €500.000.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-indigo-600 mr-2">•</span>
+                  <span>Bieden naast kapitaal vaak ook ervaring, netwerk en strategisch advies.</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Waarom kiezen voor VC */}
+          {/* Waarom kiezen */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-10">Waarom kiezen voor Venture Capital</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-10">Waarom kiezen voor Angel Investors</h2>
             
             <div className="grid md:grid-cols-3 gap-6">
               <div className="rounded-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 transform" style={{ backgroundColor: '#99ABC6' }}>
-                <h3 className="text-2xl font-bold text-white mb-4">Sneller groeien</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Toegang tot kapitaal</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  Grote investeringen helpen je product of dienst snel op de markt te brengen. Met een VC-investering kun je sneller uitbreiden. Dit is vooral belangrijk in markten waar snelheid cruciaal is, zoals technologie en biotech.
+                  Zonder directe lening of schuld krijg je toegang tot de financiering die je nodig hebt voor groei.
                 </p>
               </div>
 
               <div className="rounded-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 transform" style={{ backgroundColor: '#99ABC6' }}>
-                <h3 className="text-2xl font-bold text-white mb-4">Expertise en netwerk</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Mentorschap en netwerk</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  VC-fondsen brengen niet alleen kapitaal, maar ook ervaring, advies en een netwerk van potentiële klanten, partners en nieuwe investeerders. Dit kan doorslaggevend zijn bij het opschalen van je bedrijf.
+                  Vaak ervaren ondernemers die waardevolle inzichten en connecties bieden die jouw bedrijf versterken.
                 </p>
               </div>
 
               <div className="rounded-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 transform" style={{ backgroundColor: '#99ABC6' }}>
-                <h3 className="text-2xl font-bold text-white mb-4">Risicodragend kapitaal</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Flexibiliteit</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  VC investeert in ruil voor aandelen, hoef je het geld niet terug te betalen zoals bij een traditionele lening. Het risico ligt bij de investeerder, maar je geeft wel een deel van je bedrijf op.
+                  Investeringsvoorwaarden zijn vaak minder strikt dan bij venture capital fondsen.
                 </p>
               </div>
             </div>
@@ -68,37 +88,37 @@ export default function VentureCapitalPage() {
 
           {/* Wanneer geschikt */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Wanneer is Venture Capital geschikt?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Welke bedrijven profiteren het meest?</h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-10">
-              Venture Capital is niet voor elk bedrijf geschikt. Het past vooral bij bedrijven die:
+              Angel Investors passen vooral bij:
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Innovatief product</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Start-ups in vroege fase</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Investeerders zoeken iets nieuws dat het potentieel heeft om groot te worden
+                  Met een innovatief product of dienst die nog niet klaar zijn voor grote investeringsfondsen.
                 </p>
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Snelle opschaling</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Scale-ups die willen opschalen</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  VC's verwachten dat hun investering bijdraagt aan snelle groei
+                  Bedrijven die nog niet klaar zijn voor grote venture capital investeringen maar wel willen groeien.
                 </p>
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Schaalbaar businessmodel</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Strategische begeleiding nodig</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Het bedrijf moet de mogelijkheid hebben om in korte tijd veel klanten te bereiken
+                  Bedrijven die naast kapitaal ook waarde hechten aan mentorschap en netwerk van ervaren ondernemers.
                 </p>
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Bereid om te delen</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Hoge groeipotentie</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  VC investeert in ruil voor equity, je geeft een stukje van je bedrijf op
+                  Ondernemingen in tech, biotech, SaaS of duurzame oplossingen met sterke schaalbaarheid.
                 </p>
               </div>
             </div>
@@ -106,16 +126,16 @@ export default function VentureCapitalPage() {
 
           {/* Hoe werkt het */}
           <div className="mb-20 bg-gray-50 p-10 rounded-2xl">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Hoe werkt een VC-investering?</h2>
-            <p className="text-xl text-gray-600 leading-relaxed mb-10">Een VC-investering verloopt meestal in meerdere stappen:</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Hoe werkt Angel Investing?</h2>
+            <p className="text-xl text-gray-600 leading-relaxed mb-10">Het proces verloopt meestal in meerdere stappen:</p>
             
             <div className="grid md:grid-cols-5 gap-4">
               {[
-                { num: '1', title: 'Pitch', desc: 'Het bedrijf presenteert zijn idee aan het VC-fonds', color: 'indigo' },
-                { num: '2', title: 'Due diligence', desc: 'Het fonds onderzoekt het team, de markt, het product en de financiële situatie', color: 'purple' },
-                { num: '3', title: 'Term sheet', desc: 'Document met afspraken over bedrag, aandelen en rechten', color: 'blue' },
-                { num: '4', title: 'Investering', desc: 'Het bedrijf ontvangt kapitaal en begeleiding van het VC-fonds', color: 'green' },
-                { num: '5', title: 'Exit', desc: 'Overname, beursgang of verkoop van het bedrijf', color: 'orange' }
+                { num: '1', title: 'Netwerken & pitch', desc: 'Maak contact via angel netwerken, events of platforms en presenteer je idee met een sterke pitch deck' },
+                { num: '2', title: 'Eerste gesprekken', desc: 'Bespreek je business plan, team, marktpotentie en financiële projecties met geïnteresseerde angels' },
+                { num: '3', title: 'Due diligence', desc: 'De angel onderzoekt je bedrijf grondig: financiën, juridische zaken, marktpositie en team' },
+                { num: '4', title: 'Term sheet', desc: 'Bespreek de voorwaarden: investeringsbedrag, equity percentage, zeggenschap en exit strategie' },
+                { num: '5', title: 'Contractering', desc: 'Formaliseer de deal met juridische documenten en ontvang de investering om te groeien' }
               ].map((step) => (
                 <div key={step.num} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition relative">
                   <div className="absolute -top-3 -left-3 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
@@ -132,52 +152,52 @@ export default function VentureCapitalPage() {
 
           {/* Eisen */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Eisen voor start-ups en scale-ups</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Waar letten Angel Investors op?</h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-10">
-              Er wordt alleen geïnvesteerd als ze een goed rendement verwachten. Daarom letten ze onder andere op:
+              Angel Investors beoordelen je startup op meerdere aspecten:
             </p>
             
             <div className="grid md:grid-cols-2 gap-x-16 gap-y-4 max-w-5xl">
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Het team</strong>
-                  <p className="text-gray-700">Investeerders willen zien dat het team capabel, toegewijd en complementair is</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
-                <div>
-                  <strong className="text-lg text-gray-900">De markt</strong>
-                  <p className="text-gray-700">Een grote of snelgroeiende markt vergroot de kans op succes</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
-                <div>
-                  <strong className="text-lg text-gray-900">Product-markt fit</strong>
-                  <p className="text-gray-700">Het product moet aantoonbaar voldoen aan een echte behoefte van klanten</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
-                <div>
-                  <strong className="text-lg text-gray-900">Traction</strong>
-                  <p className="text-gray-700">Gebruiksaantallen, omzet of andere groeiprestaties</p>
+                  <strong className="text-lg text-gray-900">Sterk team</strong>
+                  <p className="text-gray-700">Een gedreven en ervaren team met complementaire skills en bewezen track record</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
                   <strong className="text-lg text-gray-900">Schaalbaarheid</strong>
-                  <p className="text-gray-700">Kan het bedrijf opschalen en winstgevend worden?</p>
+                  <p className="text-gray-700">Een business model dat snel kan groeien zonder evenredige kostenstijging</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Verdienmodel</strong>
-                  <p className="text-gray-700">Is het duidelijk hoe het bedrijf geld verdient en kan dit model groeien?</p>
+                  <strong className="text-lg text-gray-900">Marktpotentie</strong>
+                  <p className="text-gray-700">Een grote en groeiende markt met duidelijke vraag naar je product of dienst</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
+                <div>
+                  <strong className="text-lg text-gray-900">Innovatie & USP</strong>
+                  <p className="text-gray-700">Een uniek product met duidelijk concurrentievoordeel en bescherming (patent, technologie)</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
+                <div>
+                  <strong className="text-lg text-gray-900">Traction</strong>
+                  <p className="text-gray-700">Bewijs van concept met eerste klanten, omzet of gebruikersgroei</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
+                <div>
+                  <strong className="text-lg text-gray-900">Exit mogelijkheden</strong>
+                  <p className="text-gray-700">Duidelijke strategie voor toekomstige verkoop, overname of beursgang</p>
                 </div>
               </div>
             </div>
@@ -198,22 +218,29 @@ export default function VentureCapitalPage() {
                   <li className="flex items-start">
                     <span className="text-green-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Snelle groei</strong>
-                      <p className="text-gray-700 mt-1">VC-kapitaal maakt het mogelijk om snel uit te breiden</p>
+                      <strong className="text-gray-900 text-lg">Toegang tot kapitaal</strong>
+                      <p className="text-gray-700 mt-1">Zonder directe lening of schuld</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Expertise en netwerk</strong>
-                      <p className="text-gray-700 mt-1">Investeringen komen vaak met advies en contacten die de groei versnellen</p>
+                      <strong className="text-gray-900 text-lg">Mentorschap en netwerk</strong>
+                      <p className="text-gray-700 mt-1">Vaak ervaren ondernemers die waardevolle inzichten en connecties bieden</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Geen lening</strong>
-                      <p className="text-gray-700 mt-1">Het geld hoeft niet terugbetaald te worden zoals bij een banklening</p>
+                      <strong className="text-gray-900 text-lg">Flexibiliteit</strong>
+                      <p className="text-gray-700 mt-1">Investeringsvoorwaarden zijn vaak minder strikt dan bij venture capital</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 font-bold mr-3 text-lg">•</span>
+                    <div>
+                      <strong className="text-gray-900 text-lg">Snelle beslissingsprocessen</strong>
+                      <p className="text-gray-700 mt-1">Minder bureaucratie vergeleken met grote investeringsfondsen</p>
                     </div>
                   </li>
                 </ul>
@@ -229,22 +256,29 @@ export default function VentureCapitalPage() {
                   <li className="flex items-start">
                     <span className="text-red-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Aandelen afstaan</strong>
-                      <p className="text-gray-700 mt-1">Je geeft een deel van je bedrijf op</p>
+                      <strong className="text-gray-900 text-lg">Aandelenverlies</strong>
+                      <p className="text-gray-700 mt-1">Je geeft een deel van je bedrijf weg</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Invloed van investeerders</strong>
-                      <p className="text-gray-700 mt-1">VC's hebben vaak inspraak in strategische beslissingen</p>
+                      <strong className="text-gray-900 text-lg">Invloed van investeerder</strong>
+                      <p className="text-gray-700 mt-1">Sommige angels willen actief meebeslissen</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                    <div>
+                      <strong className="text-gray-900 text-lg">Beperkt kapitaal</strong>
+                      <p className="text-gray-700 mt-1">Soms niet genoeg voor grootschalige expansie, dan is aanvullende funding nodig</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-600 font-bold mr-3 text-lg">•</span>
                     <div>
                       <strong className="text-gray-900 text-lg">Hoge verwachtingen</strong>
-                      <p className="text-gray-700 mt-1">VC's verwachten hoge groei en rendement, wat druk kan zetten op het bedrijf</p>
+                      <p className="text-gray-700 mt-1">Angels verwachten vaak een snelle groei en rendement</p>
                     </div>
                   </li>
                 </ul>
@@ -252,52 +286,35 @@ export default function VentureCapitalPage() {
             </div>
           </div>
 
-          {/* Voorbeelden van fondsen */}
+          {/* Voorbeelden */}
           <div className="mb-16">
             <div className="flex items-center justify-between mb-10">
-              <h2 className="text-4xl font-bold text-gray-900">Voorbeelden van VC-fondsen</h2>
-              <Link href="/funding?category=Venture Capital">
+              <h2 className="text-4xl font-bold text-gray-900">Voorbeelden van Angel Investors</h2>
+              <Link href="/funding?category=Angel">
                 <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-                  Bekijk alle VC-fondsen →
+                  Bekijk alle Angels →
                 </button>
               </Link>
             </div>
             
             <div className="space-y-10">
-              {/* Nederlandse fondsen */}
+              {/* Nederlandse Angels */}
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="mr-3">🇳🇱</span> Nederlandse VC-fondsen
+                  <span className="mr-3">🇳🇱</span> Nederlandse Angel Investors
                 </h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">Peak Capital</strong>
-                    <p className="text-gray-600">Investeert in SaaS, marketplaces en technologie</p>
+                    <strong className="text-lg text-gray-900 block mb-2">Angel 1</strong>
+                    <p className="text-gray-600">[Beschrijving komt hier]</p>
                   </div>
                   <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">InnovationQuarter</strong>
-                    <p className="text-gray-600">Focus op start-ups en scale-ups in Zuid-Holland</p>
+                    <strong className="text-lg text-gray-900 block mb-2">Angel 2</strong>
+                    <p className="text-gray-600">[Beschrijving komt hier]</p>
                   </div>
                   <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">henQ</strong>
-                    <p className="text-gray-600">Richt zich op deep tech en software</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Europese fondsen */}
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="mr-3">🇪🇺</span> Europese VC-fondsen
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">Atomico</strong>
-                    <p className="text-gray-600">Investeert in innovatieve technologiebedrijven in heel Europa</p>
-                  </div>
-                  <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">Balderton</strong>
-                    <p className="text-gray-600">Investeert in Europese start-ups in diverse sectoren</p>
+                    <strong className="text-lg text-gray-900 block mb-2">Angel 3</strong>
+                    <p className="text-gray-600">[Beschrijving komt hier]</p>
                   </div>
                 </div>
               </div>
@@ -307,9 +324,9 @@ export default function VentureCapitalPage() {
           {/* Newsletter Section */}
           <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white p-12 rounded-2xl">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-4">Blijf op de hoogte van Venture Capital</h2>
+              <h2 className="text-4xl font-bold mb-4">Blijf op de hoogte van Angel Investors</h2>
               <p className="text-xl text-indigo-100 mb-8">
-                Meld je aan voor onze nieuwsbrief en ontvang de laatste updates over VC-fondsen en financieringsmogelijkheden
+                Meld je aan voor onze nieuwsbrief en ontvang de laatste updates over angel investing
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                 <input

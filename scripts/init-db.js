@@ -1,7 +1,7 @@
 const Database = require('better-sqlite3')
 const path = require('path')
 
-const dbPath = path.join(process.cwd(), 'hup-holland.db')
+const dbPath = path.join(process.cwd(), 'hup_holland.db')
 const db = new Database(dbPath)
 
 console.log('Initializing database...')
@@ -37,11 +37,16 @@ db.exec(`
   CREATE TABLE IF NOT EXISTS funding_opportunities (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     startup_name TEXT NOT NULL,
-    fund_name TEXT,
-    stage TEXT,
-    sector TEXT,
-    amount_eur REAL,
-    year INTEGER
+    fund_name TEXT NOT NULL,
+    country TEXT DEFAULT 'Netherlands',
+    stage TEXT NOT NULL,
+    sector TEXT NOT NULL,
+    amount_eur REAL NOT NULL,
+    year INTEGER NOT NULL,
+    type_organisatie TEXT,
+    subcategorie TEXT,
+    website TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
 
   CREATE TABLE IF NOT EXISTS saved_opportunities (
@@ -68,6 +73,7 @@ db.exec(`
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     funding_name TEXT NOT NULL,
+    funding_type TEXT NOT NULL,
     status TEXT DEFAULT 'pending',
     applied_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE

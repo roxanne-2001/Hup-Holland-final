@@ -113,7 +113,7 @@ export default function SignUpPage() {
         <div className="w-full max-w-md">
           <div className="bg-white rounded-2xl shadow-xl border-2 border-gray-100 p-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Account aanmaken</h1>
-            <p className="text-gray-600 mb-8">Maak een account aan bij Hup Holland om de beste financieringsmatches te vinden</p>
+            <p className="text-gray-600 mb-8">Maak een account aan bij Hub Holland om de beste financieringsmatches te vinden</p>
 
             {error && (
               <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">

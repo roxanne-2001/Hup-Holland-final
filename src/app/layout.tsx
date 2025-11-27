@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Hup Holland - Funding for Your Startup',
+  title: 'Hub Holland - Funding for Your Startup',
   description: 'Find funding opportunities for your startup and scaleup',
 }
 

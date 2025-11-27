@@ -3,12 +3,12 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 
-export default function VentureCapitalPage() {
+export default function SubsidiesGrantsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* Hero Section - Clean and minimal */}
+      {/* Hero Section */}
       <section className="relative pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-4">
@@ -17,50 +17,50 @@ export default function VentureCapitalPage() {
             </Link>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Venture Capital
+            Subsidies & Grants
           </h1>
           <p className="text-2xl text-gray-600 leading-relaxed">
-            Investeer in ruil voor aandelen en groei samen met je investeerders
+            Overheidssteun en EU-subsidies die je niet hoeft terug te betalen
           </p>
         </div>
       </section>
 
-      {/* Main Content - Article style */}
+      {/* Main Content */}
       <article className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Introduction */}
           <div className="mb-16 max-w-4xl">
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              Venture Capital fonds is een manier van investeren in jonge bedrijven die veel groeipotentie hebben. Bij Venture Capital, ook wel VC genoemd, investeren investeerders (VC-fondsen) geld in ruil voor een deel van het bedrijf, meestal in de vorm van aandelen.
+              Geld van de overheid dat je niet (direct) terug hoeft te betalen. Subsidies en grants zijn financiële bijdragen voor projecten die maatschappelijk of economisch wenselijk zijn, zoals innovatie, verduurzaming of werkgelegenheid.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Dit betekent dat je als ondernemer niet zoals bij een lening het geld terug hoeft te betalen, maar wel een stukje van je bedrijf moet delen. VC helpt bedrijven sneller te groeien, nieuwe markten te betreden en het product of de dienst sneller te ontwikkelen.
+              Nederland biedt verschillende vormen van overheidssteun: directe subsidies, garantieregelingen waarbij de overheid optreedt als borg, en fiscale regelingen die je belastingdruk verlagen. Het centrale loket is RVO (Rijksdienst voor Ondernemend Nederland).
             </p>
           </div>
 
-          {/* Waarom kiezen voor VC */}
+          {/* Waarom kiezen */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-10">Waarom kiezen voor Venture Capital</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-10">Drie soorten overheidssteun</h2>
             
             <div className="grid md:grid-cols-3 gap-6">
               <div className="rounded-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 transform" style={{ backgroundColor: '#99ABC6' }}>
-                <h3 className="text-2xl font-bold text-white mb-4">Sneller groeien</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Subsidies</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  Grote investeringen helpen je product of dienst snel op de markt te brengen. Met een VC-investering kun je sneller uitbreiden. Dit is vooral belangrijk in markten waar snelheid cruciaal is, zoals technologie en biotech.
+                  Geld dat je niet terugbetaalt voor specifieke projecten zoals innovatie, verduurzaming of werkgelegenheid. Draagt bij aan legitimiteit van je bedrijf.
                 </p>
               </div>
 
               <div className="rounded-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 transform" style={{ backgroundColor: '#99ABC6' }}>
-                <h3 className="text-2xl font-bold text-white mb-4">Expertise en netwerk</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Garantieregelingen</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  VC-fondsen brengen niet alleen kapitaal, maar ook ervaring, advies en een netwerk van potentiële klanten, partners en nieuwe investeerders. Dit kan doorslaggevend zijn bij het opschalen van je bedrijf.
+                  De overheid treedt op als borg voor je lening. Als je niet kunt betalen, vergoedt de overheid (een deel) aan de bank. Geeft toegang tot financiering.
                 </p>
               </div>
 
               <div className="rounded-xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300 transform" style={{ backgroundColor: '#99ABC6' }}>
-                <h3 className="text-2xl font-bold text-white mb-4">Risicodragend kapitaal</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Fiscale regelingen</h3>
                 <p className="text-lg text-white leading-relaxed">
-                  VC investeert in ruil voor aandelen, hoef je het geld niet terug te betalen zoals bij een traditionele lening. Het risico ligt bij de investeerder, maar je geeft wel een deel van je bedrijf op.
+                  Geen direct geld, maar korting op je belasting of investeringskosten. WBSO voor innovatie, MIA/VAMIL voor milieu-investeringen, KIA voor kleine investeringen.
                 </p>
               </div>
             </div>
@@ -68,37 +68,37 @@ export default function VentureCapitalPage() {
 
           {/* Wanneer geschikt */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Wanneer is Venture Capital geschikt?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Wanneer zijn Subsidies geschikt?</h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-10">
-              Venture Capital is niet voor elk bedrijf geschikt. Het past vooral bij bedrijven die:
+              Subsidies en grants passen bij:
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Innovatief product</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Innovatieve projecten</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Investeerders zoeken iets nieuws dat het potentieel heeft om groot te worden
+                  Bedrijven die werken aan R&D, nieuwe producten of technologieën die maatschappelijke waarde hebben.
                 </p>
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Snelle opschaling</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Duurzaamheid & Milieu</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  VC's verwachten dat hun investering bijdraagt aan snelle groei
+                  Ondernemingen die investeren in groene technologie, circulariteit of CO2-reductie.
                 </p>
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Schaalbaar businessmodel</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Werkgelegenheid & Groei</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Het bedrijf moet de mogelijkheid hebben om in korte tijd veel klanten te bereiken
+                  Bedrijven die banen creëren, exporteren of bijdragen aan regionale economische ontwikkeling.
                 </p>
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Bereid om te delen</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Geduld voor administratie</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  VC investeert in ruil voor equity, je geeft een stukje van je bedrijf op
+                  Ondernemers die uitgebreide verantwoording kunnen leveren en langere doorlooptijden accepteren.
                 </p>
               </div>
             </div>
@@ -106,16 +106,16 @@ export default function VentureCapitalPage() {
 
           {/* Hoe werkt het */}
           <div className="mb-20 bg-gray-50 p-10 rounded-2xl">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Hoe werkt een VC-investering?</h2>
-            <p className="text-xl text-gray-600 leading-relaxed mb-10">Een VC-investering verloopt meestal in meerdere stappen:</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Hoe werkt een Subsidie aanvraag?</h2>
+            <p className="text-xl text-gray-600 leading-relaxed mb-10">Het proces verloopt meestal in meerdere stappen:</p>
             
             <div className="grid md:grid-cols-5 gap-4">
               {[
-                { num: '1', title: 'Pitch', desc: 'Het bedrijf presenteert zijn idee aan het VC-fonds', color: 'indigo' },
-                { num: '2', title: 'Due diligence', desc: 'Het fonds onderzoekt het team, de markt, het product en de financiële situatie', color: 'purple' },
-                { num: '3', title: 'Term sheet', desc: 'Document met afspraken over bedrag, aandelen en rechten', color: 'blue' },
-                { num: '4', title: 'Investering', desc: 'Het bedrijf ontvangt kapitaal en begeleiding van het VC-fonds', color: 'green' },
-                { num: '5', title: 'Exit', desc: 'Overname, beursgang of verkoop van het bedrijf', color: 'orange' }
+                { num: '1', title: 'Zoek geschikte regeling', desc: 'Gebruik de RVO subsidiewijzer of Hub Holland om de juiste regeling te vinden die bij jouw project past' },
+                { num: '2', title: 'Check voorwaarden', desc: 'Lees alle eisen zorgvuldig: budget, termijnen, projectdoel, doelgroep en verplichte documenten' },
+                { num: '3', title: 'Dien aanvraag in', desc: 'Vul het aanvraagformulier compleet in met projectplan, begroting en onderbouwing via het RVO-portaal' },
+                { num: '4', title: 'Wacht op toekenning', desc: 'RVO beoordeelt je aanvraag (kan weken tot maanden duren). Start pas na goedkeuring' },
+                { num: '5', title: 'Verantwoording', desc: 'Lever tussentijdse rapportages en einddeclaratie met bewijsstukken volgens strikte richtlijnen' }
               ].map((step) => (
                 <div key={step.num} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition relative">
                   <div className="absolute -top-3 -left-3 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
@@ -132,52 +132,52 @@ export default function VentureCapitalPage() {
 
           {/* Eisen */}
           <div className="mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Eisen voor start-ups en scale-ups</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Eisen voor subsidie aanvragen</h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-10">
-              Er wordt alleen geïnvesteerd als ze een goed rendement verwachten. Daarom letten ze onder andere op:
+              Er wordt gelet op:
             </p>
             
             <div className="grid md:grid-cols-2 gap-x-16 gap-y-4 max-w-5xl">
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Het team</strong>
-                  <p className="text-gray-700">Investeerders willen zien dat het team capabel, toegewijd en complementair is</p>
+                  <strong className="text-lg text-gray-900">Voldoen aan specifieke voorwaarden</strong>
+                  <p className="text-gray-700">Je project moet strikte, vooraf gepubliceerde criteria vervullen</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">De markt</strong>
-                  <p className="text-gray-700">Een grote of snelgroeiende markt vergroot de kans op succes</p>
+                  <strong className="text-lg text-gray-900">Uitgebreide administratie</strong>
+                  <p className="text-gray-700">Gedetailleerde verantwoording en documentatie zijn verplicht</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Product-markt fit</strong>
-                  <p className="text-gray-700">Het product moet aantoonbaar voldoen aan een echte behoefte van klanten</p>
+                  <strong className="text-lg text-gray-900">Maatschappelijke relevantie</strong>
+                  <p className="text-gray-700">Aantoonbare bijdrage aan economie, innovatie of duurzaamheid</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Traction</strong>
-                  <p className="text-gray-700">Gebruiksaantallen, omzet of andere groeiprestaties</p>
+                  <strong className="text-lg text-gray-900">Financiële gezondheid</strong>
+                  <p className="text-gray-700">Voor garantieregelingen: je bedrijf moet gezond zijn en bank moet bereid zijn</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Schaalbaarheid</strong>
-                  <p className="text-gray-700">Kan het bedrijf opschalen en winstgevend worden?</p>
+                  <strong className="text-lg text-gray-900">Tijdige aanvraag</strong>
+                  <p className="text-gray-700">Start project NIET voor toekenning, anders vervalt je aanspraak</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <span className="text-indigo-600 font-bold mr-4 text-xl">•</span>
                 <div>
-                  <strong className="text-lg text-gray-900">Verdienmodel</strong>
-                  <p className="text-gray-700">Is het duidelijk hoe het bedrijf geld verdient en kan dit model groeien?</p>
+                  <strong className="text-lg text-gray-900">Compliancebereidheid</strong>
+                  <p className="text-gray-700">Bereid zijn om controles te ondergaan en verantwoording af te leggen</p>
                 </div>
               </div>
             </div>
@@ -198,22 +198,29 @@ export default function VentureCapitalPage() {
                   <li className="flex items-start">
                     <span className="text-green-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Snelle groei</strong>
-                      <p className="text-gray-700 mt-1">VC-kapitaal maakt het mogelijk om snel uit te breiden</p>
+                      <strong className="text-gray-900 text-lg">Niet terugbetalen</strong>
+                      <p className="text-gray-700 mt-1">Geld dat je niet (direct) hoeft terug te betalen, geen schuld</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Expertise en netwerk</strong>
-                      <p className="text-gray-700 mt-1">Investeringen komen vaak met advies en contacten die de groei versnellen</p>
+                      <strong className="text-gray-900 text-lg">Legitimiteit</strong>
+                      <p className="text-gray-700 mt-1">Draagt bij aan de geloofwaardigheid en reputatie van je bedrijf</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Geen lening</strong>
-                      <p className="text-gray-700 mt-1">Het geld hoeft niet terugbetaald te worden zoals bij een banklening</p>
+                      <strong className="text-gray-900 text-lg">Belastingvoordeel</strong>
+                      <p className="text-gray-700 mt-1">Fiscale regelingen verlagen je belastingdruk en stimuleren investeren</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 font-bold mr-3 text-lg">•</span>
+                    <div>
+                      <strong className="text-gray-900 text-lg">Toegang tot financiering</strong>
+                      <p className="text-gray-700 mt-1">Garantieregelingen geven toegang tot leningen die anders niet mogelijk waren</p>
                     </div>
                   </li>
                 </ul>
@@ -229,22 +236,29 @@ export default function VentureCapitalPage() {
                   <li className="flex items-start">
                     <span className="text-red-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Aandelen afstaan</strong>
-                      <p className="text-gray-700 mt-1">Je geeft een deel van je bedrijf op</p>
+                      <strong className="text-gray-900 text-lg">Zeer bureaucratisch</strong>
+                      <p className="text-gray-700 mt-1">Veel papierwerk, strenge regelgeving en complexe procedures</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Invloed van investeerders</strong>
-                      <p className="text-gray-700 mt-1">VC's hebben vaak inspraak in strategische beslissingen</p>
+                      <strong className="text-gray-900 text-lg">Lange doorlooptijd</strong>
+                      <p className="text-gray-700 mt-1">Aanvraagprocedures kunnen weken tot maanden duren</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-600 font-bold mr-3 text-lg">•</span>
                     <div>
-                      <strong className="text-gray-900 text-lg">Hoge verwachtingen</strong>
-                      <p className="text-gray-700 mt-1">VC's verwachten hoge groei en rendement, wat druk kan zetten op het bedrijf</p>
+                      <strong className="text-gray-900 text-lg">Strenge verplichtingen</strong>
+                      <p className="text-gray-700 mt-1">Uitgebreide verantwoording, rapportages en controles verplicht</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-600 font-bold mr-3 text-lg">•</span>
+                    <div>
+                      <strong className="text-gray-900 text-lg">Extra kosten</strong>
+                      <p className="text-gray-700 mt-1">Garantieregelingen: je betaalt een garantieprovisie aan de overheid</p>
                     </div>
                   </li>
                 </ul>
@@ -252,52 +266,35 @@ export default function VentureCapitalPage() {
             </div>
           </div>
 
-          {/* Voorbeelden van fondsen */}
+          {/* Voorbeelden */}
           <div className="mb-16">
             <div className="flex items-center justify-between mb-10">
-              <h2 className="text-4xl font-bold text-gray-900">Voorbeelden van VC-fondsen</h2>
-              <Link href="/funding?category=Venture Capital">
+              <h2 className="text-4xl font-bold text-gray-900">Voorbeelden van Subsidies</h2>
+              <Link href="/funding?category=Subsidie">
                 <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
-                  Bekijk alle VC-fondsen →
+                  Bekijk alle subsidies →
                 </button>
               </Link>
             </div>
             
             <div className="space-y-10">
-              {/* Nederlandse fondsen */}
+              {/* Nederlandse subsidies */}
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="mr-3">🇳🇱</span> Nederlandse VC-fondsen
+                  <span className="mr-3">🇳🇱</span> Nederlandse subsidies
                 </h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">Peak Capital</strong>
-                    <p className="text-gray-600">Investeert in SaaS, marketplaces en technologie</p>
+                    <strong className="text-lg text-gray-900 block mb-2">Subsidie 1</strong>
+                    <p className="text-gray-600">[Beschrijving komt hier]</p>
                   </div>
                   <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">InnovationQuarter</strong>
-                    <p className="text-gray-600">Focus op start-ups en scale-ups in Zuid-Holland</p>
+                    <strong className="text-lg text-gray-900 block mb-2">Subsidie 2</strong>
+                    <p className="text-gray-600">[Beschrijving komt hier]</p>
                   </div>
                   <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-indigo-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">henQ</strong>
-                    <p className="text-gray-600">Richt zich op deep tech en software</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Europese fondsen */}
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <span className="mr-3">🇪🇺</span> Europese VC-fondsen
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">Atomico</strong>
-                    <p className="text-gray-600">Investeert in innovatieve technologiebedrijven in heel Europa</p>
-                  </div>
-                  <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-400 transition">
-                    <strong className="text-lg text-gray-900 block mb-2">Balderton</strong>
-                    <p className="text-gray-600">Investeert in Europese start-ups in diverse sectoren</p>
+                    <strong className="text-lg text-gray-900 block mb-2">Subsidie 3</strong>
+                    <p className="text-gray-600">[Beschrijving komt hier]</p>
                   </div>
                 </div>
               </div>
@@ -307,9 +304,9 @@ export default function VentureCapitalPage() {
           {/* Newsletter Section */}
           <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white p-12 rounded-2xl">
             <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-4">Blijf op de hoogte van Venture Capital</h2>
+              <h2 className="text-4xl font-bold mb-4">Blijf op de hoogte van Subsidies</h2>
               <p className="text-xl text-indigo-100 mb-8">
-                Meld je aan voor onze nieuwsbrief en ontvang de laatste updates over VC-fondsen en financieringsmogelijkheden
+                Meld je aan voor onze nieuwsbrief en ontvang de laatste updates over subsidies en grants
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                 <input
