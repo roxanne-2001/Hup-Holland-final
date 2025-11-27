@@ -90,6 +90,7 @@ export default function FundingPage() {
                   <option value="EdTech">EdTech</option>
                   <option value="CleanTech">CleanTech</option>
                   <option value="Algemeen">Algemeen</option>
+                  <option value="Banken">Banken</option>
                 </select>
               </div>
 
