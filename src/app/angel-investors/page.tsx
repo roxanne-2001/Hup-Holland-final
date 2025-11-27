@@ -12,7 +12,7 @@ export default function AngelInvestorsPage() {
       <section className="relative pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-4">
-            <Link href="/funding" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <Link href="/" className="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
               ← Terug naar funding opties
             </Link>
           </div>
