@@ -2,8 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const Database = require('better-sqlite3')
 
-const csvPath = '/Users/roxanne/Desktop/HHS YEAR 3/1. Minor/5. Research lab/Hackaton/Funding_Completed csv 2b7da97a570a8088b97ae66dc70f016e_all.csv'
-const dbPath = path.join(process.cwd(), 'hup-holland.db')
+const csvPath = path.join(process.cwd(), 'funding_data.csv')
+const dbPath = path.join(process.cwd(), 'hup_holland.db')
 
 console.log('📥 Importing nieuwe funding data...')
 
