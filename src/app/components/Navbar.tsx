@@ -59,7 +59,7 @@ export default function Navbar() {
                 Funding
               </Link>
               <Link href="/recommendations" className="text-gray-600 hover:text-gray-900 font-medium transition">
-                Vind Funding
+                Funding Matcher
               </Link>
             </div>
           </div>

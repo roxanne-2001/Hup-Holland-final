@@ -86,13 +86,16 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-8 text-sm">
-                <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
                   <span className="text-gray-600 font-medium">Gratis vergelijken</span>
                 </div>
-                <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
                   <span className="text-gray-600 font-medium">100+ opties</span>
                 </div>
-                <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
                   <span className="text-gray-600 font-medium">AI matching</span>
                 </div>
               </div>
@@ -398,7 +401,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Voor Startups</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/recommendations" className="hover:text-white">Vind Funding</Link></li>
+                <li><Link href="/recommendations" className="hover:text-white">Funding Matcher</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white">Dashboard</Link></li>
                 <li><Link href="/signup" className="hover:text-white">Account Aanmaken</Link></li>
               </ul>
