@@ -46,8 +46,13 @@ export default function RecommendationsPage() {
 
       if (response.ok) {
         alert('✓ Opgeslagen! Bekijk je opgeslagen opportunities in je dashboard.')
+      } else if (response.status === 401) {
+        const shouldRedirect = window.confirm('Je moet ingelogd zijn om opportunities op te slaan. Wil je nu inloggen?')
+        if (shouldRedirect) {
+          window.location.href = '/login?redirect=/recommendations'
+        }
       } else {
-        alert('Je moet ingelogd zijn om opportunities op te slaan.')
+        alert('Er ging iets mis bij het opslaan. Probeer het opnieuw.')
       }
     } catch (error) {
       console.error('Error saving opportunity:', error)

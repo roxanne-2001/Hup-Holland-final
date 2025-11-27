@@ -245,7 +245,6 @@ export default function Home() {
                 1
               </div>
               <div className="mt-6">
-                <div className="text-4xl mb-4">📝</div>
                 <h3 className="font-bold text-gray-900 text-xl mb-3">Vertel over je startup</h3>
                 <p className="text-gray-600">Vul je bedrijfsgegevens en funding behoefte in - duurt slechts 2 minuten</p>
               </div>
@@ -256,7 +255,6 @@ export default function Home() {
                 2
               </div>
               <div className="mt-6">
-                <div className="text-4xl mb-4">🤖</div>
                 <h3 className="font-bold text-gray-900 text-xl mb-3">AI matching</h3>
                 <p className="text-gray-600">Onze AI analyseert 100+ funding opties en berekent je match score</p>
               </div>
@@ -267,7 +265,6 @@ export default function Home() {
                 3
               </div>
               <div className="mt-6">
-                <div className="text-4xl mb-4">📊</div>
                 <h3 className="font-bold text-gray-900 text-xl mb-3">Vergelijk & kies</h3>
                 <p className="text-gray-600">Bekijk alle details, voorwaarden en reviews op één overzichtelijke plek</p>
               </div>
@@ -278,7 +275,6 @@ export default function Home() {
                 4
               </div>
               <div className="mt-6">
-                <div className="text-4xl mb-4">🚀</div>
                 <h3 className="font-bold text-gray-900 text-xl mb-3">Aanvragen</h3>
                 <p className="text-gray-600">Verstuur je aanvraag direct via ons platform - wij regelen de rest</p>
               </div>

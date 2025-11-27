@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Protected routes that require authentication
-  const protectedRoutes = ['/dashboard', '/account', '/recommendations']
+  const protectedRoutes = ['/dashboard', '/account']
   const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
 
   // If trying to access protected route without session, redirect to login

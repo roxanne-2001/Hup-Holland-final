@@ -58,11 +58,9 @@ export default function Navbar() {
               <Link href="/funding" className="text-gray-600 hover:text-gray-900 font-medium transition">
                 Funding
               </Link>
-              {user && (
-                <Link href="/recommendations" className="text-gray-600 hover:text-gray-900 font-medium transition">
-                  Platform
-                </Link>
-              )}
+              <Link href="/recommendations" className="text-gray-600 hover:text-gray-900 font-medium transition">
+                Vind Funding
+              </Link>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
