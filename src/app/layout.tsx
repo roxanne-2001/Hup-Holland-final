@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Assistant from './components/Assistant'
 
 export const metadata: Metadata = {
   title: 'Hub Holland - Funding for Your Startup',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white" suppressHydrationWarning>{children}</body>
+      <body className="bg-white" suppressHydrationWarning>
+        {children}
+        <Assistant />
+      </body>
     </html>
   )
 }
