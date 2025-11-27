@@ -23,8 +23,8 @@ console.log('🗑️  Oude data verwijderd')
 
 // Prepare insert statement
 const insert = db.prepare(
-  `INSERT INTO funding_opportunities (startup_name, fund_name, stage, sector, amount_eur, year)
-   VALUES (?, ?, ?, ?, ?, ?)`
+  `INSERT INTO funding_opportunities (startup_name, fund_name, stage, sector, amount_eur, year, type_organisatie, subcategorie, website)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 )
 
 let count = 0
@@ -53,12 +53,14 @@ for (let i = 1; i < lines.length; i++) {
   values.push(current.trim())
 
   // Extract fields based on CSV structure
+  // Headers: Bedrijfsnaam,ID,Type organisatie,Hoofdcategorie funding,Subcategorie,Fase doelgroep,Sector focus,Land,Website,Opmerkingen,Adres
   const bedrijfsnaam = values[0] || 'Unknown'
-  const fase = values[2] || 'Startups' // Fase doelgroep
+  const typeOrganisatie = values[2] || 'Platform' // Type organisatie
   const hoofdcategorie = values[3] || 'Unknown' // Hoofdcategorie funding
-  const sector = values[7] || 'Algemeen' // Sector focus
-  const subcategorie = values[8] || '' // Subcategorie
-  const website = values[10] || ''
+  const subcategorie = values[4] || '' // Subcategorie
+  const faseBedrijf = values[5] || 'Startups' // Fase doelgroep
+  const sectorFocus = values[6] || 'Algemeen' // Sector focus
+  const website = values[8] || ''
 
   // Skip if no company name
   if (!bedrijfsnaam || bedrijfsnaam === 'Bedrijfsnaam') {
@@ -77,14 +79,14 @@ for (let i = 1; i < lines.length; i++) {
   }
 
   // Normalize stage
-  let normalizedStage = fase
-  if (fase.includes('Startup') || fase.includes('Starters')) {
+  let normalizedStage = faseBedrijf
+  if (faseBedrijf.includes('Startup') || faseBedrijf.includes('Starters')) {
     normalizedStage = 'Seed'
-  } else if (fase.includes('Scale-up')) {
+  } else if (faseBedrijf.includes('Scale-up')) {
     normalizedStage = 'Series A'
-  } else if (fase.includes('MKB')) {
+  } else if (faseBedrijf.includes('MKB')) {
     normalizedStage = 'Growth'
-  } else if (fase.includes('Lokale') || fase.includes('Particulieren')) {
+  } else if (faseBedrijf.includes('Lokale') || faseBedrijf.includes('Particulieren')) {
     normalizedStage = 'Pre-Seed'
   }
 
@@ -92,10 +94,13 @@ for (let i = 1; i < lines.length; i++) {
     insert.run(
       bedrijfsnaam,
       hoofdcategorie,
-      normalizedStage,
-      sector,
+      faseBedrijf, // Keep original fase bedrijf
+      sectorFocus,
       amountEur,
-      2024
+      2024,
+      typeOrganisatie,
+      subcategorie,
+      website
     )
     count++
   } catch (error) {

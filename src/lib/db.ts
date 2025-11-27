@@ -82,6 +82,9 @@ export function initDatabase() {
       sector TEXT NOT NULL,
       amount_eur REAL NOT NULL,
       year INTEGER NOT NULL,
+      type_organisatie TEXT,
+      subcategorie TEXT,
+      website TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
   `)

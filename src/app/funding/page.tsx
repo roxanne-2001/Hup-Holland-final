@@ -14,23 +14,28 @@ interface FundingOpportunity {
   description: string
   sector: string
   year: number
+  website?: string
 }
 
 export default function FundingPage() {
   const [opportunities, setOpportunities] = useState<FundingOpportunity[]>([])
   const [loading, setLoading] = useState(true)
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedOrganisatie, setSelectedOrganisatie] = useState('all')
+  const [selectedCategorie, setSelectedCategorie] = useState('all')
+  const [selectedFase, setSelectedFase] = useState('all')
   const [selectedSector, setSelectedSector] = useState('all')
 
   useEffect(() => {
     fetchOpportunities()
-  }, [selectedCategory, selectedSector])
+  }, [selectedOrganisatie, selectedCategorie, selectedFase, selectedSector])
 
   const fetchOpportunities = async () => {
     setLoading(true)
     try {
       let url = '/api/funding?'
-      if (selectedCategory !== 'all') url += `category=${selectedCategory}&`
+      if (selectedOrganisatie !== 'all') url += `organisatie=${selectedOrganisatie}&`
+      if (selectedCategorie !== 'all') url += `categorie=${selectedCategorie}&`
+      if (selectedFase !== 'all') url += `fase=${selectedFase}&`
       if (selectedSector !== 'all') url += `sector=${selectedSector}&`
       
       const response = await fetch(url)
@@ -61,18 +66,54 @@ export default function FundingPage() {
           </div>
 
           {/* Filters */}
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-12">
-            <div className="grid md:grid-cols-3 gap-4">
+          <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-12">
+            <div className="grid md:grid-cols-4 gap-4 mb-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Type Organisatie</label>
+                <select
+                  value={selectedOrganisatie}
+                  onChange={(e) => setSelectedOrganisatie(e.target.value)}
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-indigo-600 focus:outline-none transition"
+                >
+                  <option value="all">Alle types</option>
+                  <option value="Platform">Crowdfunding</option>
+                  <option value="Venture Capital">Venture Capital</option>
+                  <option value="Bank">Bank</option>
+                  <option value="Fonds">Fonds</option>
+                </select>
+              </div>
+
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Categorie</label>
                 <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  value={selectedCategorie}
+                  onChange={(e) => setSelectedCategorie(e.target.value)}
                   className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-indigo-600 focus:outline-none transition"
                 >
                   <option value="all">Alle categorieën</option>
-                  <option value="Venture Capital">Venture Capital</option>
-                  <option value="Crowdfunding">Crowdfunding</option>
+                  <option value="Lending">Leningen</option>
+                  <option value="Equity">Aandelen</option>
+                  <option value="Reward-based">Beloning-gebaseerd</option>
+                  <option value="Donatie">Donatie</option>
+                  <option value="Lending & Equity">Leningen & Aandelen</option>
+                  <option value="Equity & Lening">Aandelen & Leningen</option>
+                  <option value="Platform">Platform</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Fase Bedrijf</label>
+                <select
+                  value={selectedFase}
+                  onChange={(e) => setSelectedFase(e.target.value)}
+                  className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-indigo-600 focus:outline-none transition"
+                >
+                  <option value="all">Alle fases</option>
+                  <option value="Startups">Startups</option>
+                  <option value="Scale-ups">Scale-ups</option>
+                  <option value="MKB">MKB</option>
+                  <option value="Starters">Starters</option>
+                  <option value="Vastgoed">Vastgoed</option>
                 </select>
               </div>
 
@@ -85,26 +126,28 @@ export default function FundingPage() {
                 >
                   <option value="all">Alle sectoren</option>
                   <option value="Technology">Technology</option>
-                  <option value="FinTech">FinTech</option>
-                  <option value="HealthTech">HealthTech</option>
-                  <option value="EdTech">EdTech</option>
-                  <option value="CleanTech">CleanTech</option>
+                  <option value="Tech">Tech</option>
                   <option value="Algemeen">Algemeen</option>
-                  <option value="Banken">Banken</option>
+                  <option value="Onroerend goed">Onroerend goed</option>
+                  <option value="Innovatie">Innovatie</option>
+                  <option value="Duurzaamheid">Duurzaamheid</option>
+                  <option value="Impact">Impact</option>
                 </select>
               </div>
-
-              <div className="flex items-end">
-                <button
-                  onClick={() => {
-                    setSelectedCategory('all')
-                    setSelectedSector('all')
-                  }}
-                  className="w-full border-2 border-gray-200 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:border-gray-300 hover:bg-gray-50 transition"
-                >
-                  Reset filters
-                </button>
-              </div>
+            </div>
+            
+            <div className="flex justify-end">
+              <button
+                onClick={() => {
+                  setSelectedOrganisatie('all')
+                  setSelectedCategorie('all')
+                  setSelectedFase('all')
+                  setSelectedSector('all')
+                }}
+                className="border-2 border-gray-200 text-gray-700 px-6 py-2 rounded-xl font-semibold hover:border-gray-300 hover:bg-gray-50 transition"
+              >
+                Reset alle filters
+              </button>
             </div>
           </div>
         </div>
@@ -165,11 +208,36 @@ export default function FundingPage() {
                         <span className="text-gray-500">📈</span>
                         <span className="text-gray-600 capitalize">{opp.stage}</span>
                       </div>
+                      {opp.website && (
+                        <div className="flex items-center gap-2 text-sm">
+                          <span className="text-gray-500">🔗</span>
+                          <a 
+                            href={opp.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-indigo-600 hover:text-indigo-800 hover:underline truncate"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {opp.website.replace('https://', '').replace('http://', '').split('/')[0]}
+                          </a>
+                        </div>
+                      )}
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform">
-                      Meer info →
-                    </button>
+                    {opp.website ? (
+                      <a 
+                        href={opp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform text-center"
+                      >
+                        Bezoek website →
+                      </a>
+                    ) : (
+                      <button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform">
+                        Meer info →
+                      </button>
+                    )}
                   </div>
                 ))}
               </div>
@@ -181,7 +249,9 @@ export default function FundingPage() {
                   <p className="text-gray-600 mb-6">Probeer je filters aan te passen</p>
                   <button
                     onClick={() => {
-                      setSelectedCategory('all')
+                      setSelectedOrganisatie('all')
+                      setSelectedCategorie('all')
+                      setSelectedFase('all')
                       setSelectedSector('all')
                     }}
                     className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition transform"
