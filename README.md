@@ -27,11 +27,25 @@ Een funding platform waar Nederlandse startups informatie kunnen krijgen over fu
 
 ### Installation
 
-1. Clone dit project
-2. Install dependencies:
+1. Clone dit project:
+```bash
+git clone https://github.com/roxanne-2001/Hup-Holland-final.git
+cd Hup-Holland-final
+```
 
+2. Install dependencies:
 ```bash
 npm install
+```
+
+3. Setup database:
+```bash
+node scripts/setup.js
+```
+
+4. Import funding data (als je het CSV bestand hebt):
+```bash
+node scripts/import-funding-data.js
 ```
 
 ### Development
@@ -43,6 +57,8 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in je browser.
+
+**Let op**: Als de funding pagina leeg is, moet je eerst de funding data importeren met het CSV bestand.
 
 ### Build
 
