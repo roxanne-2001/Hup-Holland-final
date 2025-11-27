@@ -75,7 +75,6 @@ export default function VentureCapitalPage() {
             
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <div className="text-indigo-600 text-3xl mb-3">🚀</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Innovatief product</h3>
                 <p className="text-gray-700 leading-relaxed">
                   Investeerders zoeken iets nieuws dat het potentieel heeft om groot te worden
@@ -83,7 +82,6 @@ export default function VentureCapitalPage() {
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <div className="text-purple-600 text-3xl mb-3">📈</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Snelle opschaling</h3>
                 <p className="text-gray-700 leading-relaxed">
                   VC's verwachten dat hun investering bijdraagt aan snelle groei
@@ -91,7 +89,6 @@ export default function VentureCapitalPage() {
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <div className="text-blue-600 text-3xl mb-3">💼</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Schaalbaar businessmodel</h3>
                 <p className="text-gray-700 leading-relaxed">
                   Het bedrijf moet de mogelijkheid hebben om in korte tijd veel klanten te bereiken
@@ -99,7 +96,6 @@ export default function VentureCapitalPage() {
               </div>
               
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-indigo-400 transition">
-                <div className="text-green-600 text-3xl mb-3">🤝</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Bereid om te delen</h3>
                 <p className="text-gray-700 leading-relaxed">
                   VC investeert in ruil voor equity, je geeft een stukje van je bedrijf op
@@ -143,15 +139,14 @@ export default function VentureCapitalPage() {
             
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: '👥', title: 'Het team', desc: 'Investeerders willen zien dat het team capabel, toegewijd en complementair is' },
-                { icon: '📈', title: 'De markt', desc: 'Een grote of snelgroeiende markt vergroot de kans op succes' },
-                { icon: '🎯', title: 'Product-markt fit', desc: 'Het product moet aantoonbaar voldoen aan een echte behoefte van klanten' },
-                { icon: '📊', title: 'Traction', desc: 'Gebruiksaantallen, omzet of andere groeiprestaties' },
-                { icon: '🚀', title: 'Schaalbaarheid', desc: 'Kan het bedrijf opschalen en winstgevend worden?' },
-                { icon: '💡', title: 'Verdienmodel', desc: 'Is het duidelijk hoe het bedrijf geld verdient en kan dit model groeien?' }
+                { title: 'Het team', desc: 'Investeerders willen zien dat het team capabel, toegewijd en complementair is' },
+                { title: 'De markt', desc: 'Een grote of snelgroeiende markt vergroot de kans op succes' },
+                { title: 'Product-markt fit', desc: 'Het product moet aantoonbaar voldoen aan een echte behoefte van klanten' },
+                { title: 'Traction', desc: 'Gebruiksaantallen, omzet of andere groeiprestaties' },
+                { title: 'Schaalbaarheid', desc: 'Kan het bedrijf opschalen en winstgevend worden?' },
+                { title: 'Verdienmodel', desc: 'Is het duidelijk hoe het bedrijf geld verdient en kan dit model groeien?' }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition">
-                  <div className="text-4xl mb-4">{item.icon}</div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
