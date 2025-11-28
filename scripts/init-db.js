@@ -56,6 +56,7 @@ db.exec(`
     funding_type TEXT,
     match_score INTEGER,
     funding_amount TEXT,
+    description TEXT,
     saved_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
   );
