@@ -4,6 +4,14 @@ import { useState, useRef } from 'react'
 import Script from 'next/script'
 import Navbar from '../components/Navbar'
 
+// Slide dimensions in inches (standard widescreen 10" x 7.5")
+const SLIDE_WIDTH_IN = 10
+const SLIDE_HEIGHT_IN = 7.5
+// Scale factor for rendering PDF pages to canvas (higher = better quality)
+const PDF_RENDER_SCALE = 2
+// JPEG quality for slide images (0–1)
+const JPEG_QUALITY = 0.92
+
 declare global {
   interface Window {
     PptxGenJS: new () => {
@@ -67,7 +75,7 @@ export default function PdfToPptPage() {
 
       for (let i = 1; i <= totalPages; i++) {
         const page = await pdfDoc.getPage(i)
-        const viewport = page.getViewport({ scale: 2 })
+        const viewport = page.getViewport({ scale: PDF_RENDER_SCALE })
 
         const canvas = document.createElement('canvas')
         canvas.width = viewport.width
@@ -76,20 +84,17 @@ export default function PdfToPptPage() {
 
         await page.render({ canvasContext: ctx, viewport }).promise
 
-        const imgData = canvas.toDataURL('image/jpeg', 0.92)
+        const imgData = canvas.toDataURL('image/jpeg', JPEG_QUALITY)
 
-        // Slide dimensions in inches (standard 10" x 7.5")
-        const slideW = 10
-        const slideH = 7.5
         const aspectRatio = viewport.width / viewport.height
-        let imgW = slideW
-        let imgH = slideW / aspectRatio
-        if (imgH > slideH) {
-          imgH = slideH
-          imgW = slideH * aspectRatio
+        let imgW = SLIDE_WIDTH_IN
+        let imgH = SLIDE_WIDTH_IN / aspectRatio
+        if (imgH > SLIDE_HEIGHT_IN) {
+          imgH = SLIDE_HEIGHT_IN
+          imgW = SLIDE_HEIGHT_IN * aspectRatio
         }
-        const x = (slideW - imgW) / 2
-        const y = (slideH - imgH) / 2
+        const x = (SLIDE_WIDTH_IN - imgW) / 2
+        const y = (SLIDE_HEIGHT_IN - imgH) / 2
 
         const slide = pptx.addSlide()
         slide.addImage({ data: imgData, x, y, w: imgW, h: imgH })
