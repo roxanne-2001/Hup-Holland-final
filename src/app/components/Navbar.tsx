@@ -61,6 +61,9 @@ export default function Navbar() {
               <Link href="/recommendations" className="text-gray-600 hover:text-gray-900 font-medium transition">
                 Funding Matcher
               </Link>
+              <Link href="/pdf-to-ppt" className="text-gray-600 hover:text-gray-900 font-medium transition">
+                PDF naar PPT
+              </Link>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
